@@ -1,7 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Employee from './Employee';
+import Card from './Card';
 import APIurl from '../config';
 import axios from 'axios';
+
+function createCard(employee) {
+	return (
+		<Card
+			key={employee.id}
+			name={employee.name}
+			imagePath={employee.imagePath}
+			title={employee.title}
+			location={employee.location}
+		/>
+	);
+}
 
 const Employees = () => {
 	const [employees, setEmployees] = useState([]);
@@ -16,9 +29,10 @@ const Employees = () => {
 	}
 	return (
 		<div>
-			{employees.map((employee, index) => {
+			{employees.map(createCard)}
+			{/* {employees.map((employee, index) => {
 				return <Employee key={index} employee={employee} index={index} />;
-			})}
+			})} */}
 		</div>
 	);
 };
