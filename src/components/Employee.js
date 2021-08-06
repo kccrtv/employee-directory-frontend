@@ -6,6 +6,9 @@ const Employee = ({ employee, index }) => {
 		<div>
 			<Link to={`/employees/${employee._id}`}>
 				<p>{employee.name}</p>
+				<p>{employee.title}</p>
+				<p>{employee.location}</p>
+				<img src={employee.imagePath} alt={`${employee.name} headshot`} />
 			</Link>
 		</div>
 	);
