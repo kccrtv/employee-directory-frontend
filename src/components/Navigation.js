@@ -18,12 +18,7 @@ const Navigation = () => {
 					<Nav.Link as={Link} to='/employees'>
 						Directory
 					</Nav.Link>
-					<Nav.Link as={Link} to='/search'>
-						Search
-					</Nav.Link>
-					<Nav.Link as={Link} to='/about'>
-						About
-					</Nav.Link>
+
 					<Nav.Link as={Link} to='/add-employee'>
 						Add
 					</Nav.Link>

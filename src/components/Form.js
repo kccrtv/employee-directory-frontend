@@ -29,21 +29,10 @@ const Form = () => {
 			.post(`${APIurl}/employees`, person)
 			.then(() => {
 				setPerson(initialState);
-				history.push('/');
+				history.push('/employees');
 			})
 			.catch(console.error);
 	};
-
-	function getPerson(person) {
-		// fetch(APIurl)
-		// 	.then((res) => res.json())
-		// 	.then((res) => setPerson(res.data))
-		// 	.catch(console.error);
-	}
-
-	// useEffect(() => {
-	// 	getPerson(person);
-	// }, []);
 
 	return (
 		<div>
