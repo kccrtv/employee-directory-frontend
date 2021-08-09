@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import APIurl from '../config';
+import axios from 'axios';
 import Avatar from './Avatar';
 import Detail from './Detail';
+import EmployeeID from './EmployeeID';
 
-const Card = (props) => {
+const Card = (props, { editPerson, handleDelete }) => {
 	return (
 		<div className='card'>
 			<div className='top'>
-				<p>{props.key}</p>
 				<h2 className='name'>{props.name}</h2>
+
 				<Avatar src={props.imagePath} />
 			</div>
 			<div className='bottom'>

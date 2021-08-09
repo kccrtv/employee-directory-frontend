@@ -26,7 +26,7 @@ const Form = () => {
 		event.preventDefault();
 		// getPerson(person);
 		axios
-			.post(`${APIurl}`, person)
+			.post(`${APIurl}/employees`, person)
 			.then(() => {
 				setPerson(initialState);
 				history.push('/');

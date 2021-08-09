@@ -19,7 +19,7 @@ function App() {
 			<Navigation />
 			<Route exact path='/' component={Home} />
 			<Route path='/home' render={() => <Redirect to='/' />} />
-			<Route path='/employees' component={Employees} />
+			<Route exact path='/employees' component={Employees} />
 			<Route path='/employees/:id' component={EmployeeID} />
 			<Route path='/search' component={Search} />
 			<Route path='/about' component={About} />
