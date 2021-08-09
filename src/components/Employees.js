@@ -20,7 +20,8 @@ const Employees = () => {
 	const [employees, setEmployees] = useState([]);
 
 	useEffect(() => {
-		axios(`${APIurl}/employees`)
+		// axios(`${APIurl}/employees`)
+		axios(`${APIurl}`)
 			.then((res) => setEmployees(res.data))
 			.catch(console.error);
 	}, []);

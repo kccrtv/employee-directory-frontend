@@ -43,10 +43,10 @@ body {
   border-radius: 25px;
   position: relative;
   padding: 25px 15px;
-  background-color: #81ecec;
+  background-color: #fff;
   margin: 50px 0;
   height: 200px;
-  box-shadow: 0 2px 5px #ccc;
+  box-shadow: 0 7px 19px #ccc;
   text-align: left;
 }
 
@@ -54,7 +54,8 @@ body {
   border-radius: 25px 25px 0 0;
   height: 100px;
   width: 100%;
-  background-color: #00cec9;
+  background-color: #121238;
+  
   position: absolute;
   top: 0;
   left: 0;
@@ -63,7 +64,8 @@ body {
 
 .name {
   font-size: 2em;
-  color: #2d3436;
+  // color: #2d3436;
+  color: #fff;
   display: flex;
   flex: 1;
   margin: 5% 0 0 15px;
@@ -87,7 +89,7 @@ body {
 
 .info {
   margin: 16px 0;
-  color: #1a7e76;
+  color: #121238;
 }
 
 
