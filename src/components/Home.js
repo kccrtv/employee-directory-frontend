@@ -20,11 +20,14 @@ const Home = () => {
 	const [list, setList] = useState([]);
 
 	const getList = () => {
-		return axios(`${APIurl}/employees`)
-			.then((res) => {
-				setList(res.data);
-			})
-			.catch(console.error);
+		return (
+			axios(`${APIurl}/employees`)
+				// return axios(`${APIurl}`)
+				.then((res) => {
+					setList(res.data);
+				})
+				.catch(console.error)
+		);
 	};
 
 	useEffect(() => {

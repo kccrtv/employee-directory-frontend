@@ -31,5 +31,5 @@
 - You will need to have Node and Git installed on your machine. To start developing please create a fork of the root repository.
 - Install the dependencies with:
   `npm install`
-- To start the dev server run this command: `npm run start`
-- To build the production site run: `npm run build`
+- To start the dev server run this command: `yarn start`
+- To build the production site run: `yarn build`
