@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Employee = ({ employee, index }) => {
+const Employee = ({ employee }) => {
 	return (
 		<div>
 			<Link to={`/employees/${employee._id}`}>

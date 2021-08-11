@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
-import styled from 'styled-components';
 import { Form, Col, Button } from 'react-bootstrap';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-
+import header from '../assets/Header.svg';
+import barcode from '../assets/Barcode.svg';
 import {
 	Background,
 	ModalWrapper,
 	ModalBox,
 	ModalContent,
 	ModalTextDiv,
-	Icon,
 	InputContainer,
-	HeaderSix,
 	ButtonDiv,
 	BadgeDiv,
 	BadgeHeader,
@@ -25,12 +23,6 @@ import {
 	BadgeName,
 	BadgeDetails,
 } from './GlobalStyles';
-import header from '../assets/Header.svg';
-import barcode from '../assets/Barcode.svg';
-
-const StyledInput = styled.input`
-	display: block;
-`;
 
 const EmployeeID = ({ match }) => {
 	const history = useHistory();
@@ -77,7 +69,6 @@ const EmployeeID = ({ match }) => {
 	};
 
 	const openModal = () => {
-		// setModal(true);
 		setModal((prev) => !prev);
 	};
 

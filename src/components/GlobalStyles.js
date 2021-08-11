@@ -7,9 +7,9 @@ export const GlobalStyles = createGlobalStyle`
 }
 
  body {
-  margin: 2rem auto;
-  max-width: 70vw;
-  text-align: center;
+	margin: 2rem auto;
+	max-width: 70vw;
+	text-align: center;
  }
 
 .card-container{
@@ -17,6 +17,11 @@ export const GlobalStyles = createGlobalStyle`
 	width: 18rem;
 	padding: 0.5rem;
 }
+`;
+
+export const NavLogo = styled.img`
+	max-width: 4rem;
+	margin: 5px;
 `;
 
 export const Background = styled.div`

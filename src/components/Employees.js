@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import CardId from './CardId';
 import APIurl from '../config';
 import axios from 'axios';
-// import { Card } from 'react-bootstrap';
 import { CardDiv } from './GlobalStyles';
 
 function createCard(employee) {
@@ -15,17 +13,6 @@ function createCard(employee) {
 			location={employee.location}
 			href={employee._id}
 		/>
-
-		// <Link to={`/employees/${employee._id}`}>
-		// <CardId
-		// 	key={employee._id}
-		// 	name={employee.name}
-		// 	// imagePath={employee.imagePath}
-		// 	title={employee.title}
-		// 	location={employee.location}
-		// 	href={employee._id}
-		// />
-		// </Link>
 	);
 }
 

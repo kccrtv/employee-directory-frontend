@@ -1,10 +1,4 @@
 import React from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import APIurl from '../config';
-import axios from 'axios';
-import Avatar from './Avatar';
-import Detail from './Detail';
-import EmployeeID from './EmployeeID';
 import { Card } from 'react-bootstrap';
 
 const CardId = (props) => {

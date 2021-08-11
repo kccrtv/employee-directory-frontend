@@ -2,10 +2,13 @@ import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
+import logo from '../assets/b99logo.png';
+import { NavLogo } from './GlobalStyles';
 
 const Navigation = () => {
 	return (
 		<Navbar collapseOnSelect variant='light' expand='md'>
+			<NavLogo src={logo} alt='brooklyn 99 logo' />
 			<Navbar.Brand as={Link} to='/'>
 				NYPD Employee Directory
 			</Navbar.Brand>
