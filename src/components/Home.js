@@ -1,33 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 import { Table } from 'react-bootstrap';
-import styled from 'styled-components';
-import Row from './Row';
+import { StyledLink } from './GlobalStyles';
 
-function createRow(list) {
+const RowLink = (props) => {
 	return (
-		<Row
-			key={list._id}
-			link={list._id}
-			name={list.name}
-			title={list.title}
-			location={list.location}
-		/>
+		<tr>
+			<td>
+				<StyledLink href={`/employees/${props.id}`}>{props.name}</StyledLink>
+			</td>
+			<td>{props.title}</td>
+			<td>{props.location}</td>
+		</tr>
 	);
-}
-
-function getRows(list) {
-	const rowList = list.map(createRow(list));
-	console.log(rowList);
-}
+};
 
 const Home = () => {
 	const [list, setList] = useState([]);
+
 	const getList = () => {
 		return axios(`${APIurl}/employees`)
-			.then((res) => setList(res.data))
+			.then((res) => {
+				setList(res.data);
+			})
 			.catch(console.error);
 	};
 
@@ -41,62 +37,29 @@ const Home = () => {
 
 	return (
 		<div>
-			<Table>
+			<Table responsive striped bordered hover size='md'>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Title</th>
+						<th>Location</th>
+					</tr>
+				</thead>
 				<tbody>
-					<Row
-						key={list[0]._id}
-						link={list[0]._id}
-						name={list[0].name}
-						title={list[0].title}
-						location={list[0].location}
-					/>
+					{list
+						? list.map((person) => (
+								<RowLink
+									href={person._id}
+									key={person._id}
+									id={person._id}
+									name={person.name}
+									title={person.title}
+									location={person.location}
+								/>
+						  ))
+						: null}
 				</tbody>
 			</Table>
-			{/* {list ? (
-				<Table responsive='lg'>
-					<thead>
-						<tr>
-							<th>#</th>
-							<th>Table heading</th>
-							<th>Table heading</th>
-							<th>Table heading</th>
-							<th>Table heading</th>
-							<th>Table heading</th>
-							<th>Table heading</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-						</tr>
-						{getRows()}
-						<tr>
-							<td>2</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-							<td>Table cell</td>
-						</tr>
-					</tbody>
-				</Table>
-			) : null} */}
 		</div>
 	);
 };

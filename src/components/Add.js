@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Form } from 'react-bootstrap';
 import APIurl from '../config';
 import axios from 'axios';
 import styled from 'styled-components';
@@ -8,7 +9,7 @@ const StyledInput = styled.input`
 	display: block;
 `;
 
-const Form = () => {
+const Add = () => {
 	const initialState = {
 		name: '',
 		title: '',
@@ -20,11 +21,9 @@ const Form = () => {
 	const [person, setPerson] = useState(initialState);
 	const handleChange = (event) => {
 		setPerson({ ...person, [event.target.name]: event.target.value });
-		// setPerson(event.target.value);
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// getPerson(person);
 		axios
 			.post(`${APIurl}/employees`, person)
 			.then(() => {
@@ -36,7 +35,7 @@ const Form = () => {
 
 	return (
 		<div>
-			<form onSubmit={handleSubmit} className='create-form'>
+			<Form onSubmit={handleSubmit} className='create-form'>
 				<label htmlFor='employee'>Employee Full Name:</label>
 				<StyledInput
 					type='text'
@@ -81,9 +80,9 @@ const Form = () => {
 				<button id='button' type='submit'>
 					Submit
 				</button>
-			</form>
+			</Form>
 		</div>
 	);
 };
 
-export default Form;
+export default Add;

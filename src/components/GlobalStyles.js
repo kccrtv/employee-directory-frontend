@@ -9,25 +9,11 @@ export const GlobalStyles = createGlobalStyle`
 
 }
 
-// body {
-//     margin:  auto 0;
-//     display: grid;
-// 	grid-template-rows: repeat(8, 4ch 56px);
-	
-// }
-
-// main {
-//   display: grid;
-// 	grid-template-rows: repeat(4, 40px 16px);
-// 	grid-template-columns: 2fr 1fr 1fr 1fr;
-// }
-
 body {
   font-family: sans-serif;
   margin: 0 auto;
   padding: 25px;
-  max-width: 400px;
-  min-width: 400px;
+  max-width: 60vw;
   background-color: #dfe6e9;
   text-align: center;
 }
@@ -64,7 +50,6 @@ body {
 
 .name {
   font-size: 2em;
-  // color: #2d3436;
   color: #fff;
   display: flex;
   flex: 1;
@@ -91,38 +76,7 @@ body {
   margin: 16px 0;
   color: #121238;
 }
-
-
 `;
-
-// export const Rolodex = styled.div`
-// 	display: grid;
-// 	grid-template-rows: repeat(6, 4px 8px 7ch);
-// 	grid-template-columns: 1fr 3fr 1fr;
-// 	margin: 0 auto;
-// 	width: 40vw;
-// 	height: 70vh;
-// 	background-image: url(${rolodex});
-// 	background-repeat: no-repeat;
-// 	background-size: contain;
-// `;
-
-// export const CardDiv = styled.div`
-// 	width: 100%;
-// 	border: 3px solid black;
-// 	border-radius: 16px;
-// 	margin: 0 auto;
-// 	grid-row-start: 12;
-// 	grid-row-end: 19;
-// 	grid-column-start: 2;
-// 	grid-column-end: 3;
-// `;
-
-// export const CarouselDiv = styled.div`
-// 	display: grid;
-// 	grid-row-start: 8;
-// 	grid-column-start: 3;
-// `;
 
 export const Background = styled.div`
 	background-color: rgba(0, 0, 0, 0.4);
@@ -229,4 +183,8 @@ export const InputContainer = styled.div`
 
 	outline: none;
 	font-size: 1.2em;
+`;
+
+export const StyledLink = styled.a`
+	text-decoration: none;
 `;
