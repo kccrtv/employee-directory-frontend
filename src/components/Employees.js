@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Card from './Card';
+import CardId from './CardId';
 import APIurl from '../config';
 import axios from 'axios';
 // import { Card } from 'react-bootstrap';
+import { CardDiv } from './GlobalStyles';
 
 function createCard(employee) {
 	return (
-		// <Link to={`/employees/${employee._id}`}>
-		<Card
-			key={employee._id}
+		<CardId
 			name={employee.name}
-			// imagePath={employee.imagePath}
+			imagePath={employee.imagePath}
 			title={employee.title}
 			location={employee.location}
 			href={employee._id}
 		/>
+
+		// <Link to={`/employees/${employee._id}`}>
+		// <CardId
+		// 	key={employee._id}
+		// 	name={employee.name}
+		// 	// imagePath={employee.imagePath}
+		// 	title={employee.title}
+		// 	location={employee.location}
+		// 	href={employee._id}
+		// />
 		// </Link>
 	);
 }
@@ -39,7 +48,7 @@ const Employees = () => {
 		return <h1>Loading...</h1>;
 	}
 
-	return <div>{employees.map(createCard)}</div>;
+	return <CardDiv>{employees.map(createCard)}</CardDiv>;
 };
 
 export default Employees;

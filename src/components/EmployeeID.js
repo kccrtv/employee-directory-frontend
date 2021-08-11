@@ -42,20 +42,16 @@ const EmployeeID = ({ match }) => {
 	useEffect(() => {
 		axios
 			.get(`${APIurl}/employees/${id}`)
-			.then(
-				({ data }) => setPerson(data)
-				// console.log(data)
-			)
+			.then(({ data }) => setPerson(data))
 			.catch(console.error);
 	}, [id]);
 
 	const handleEdit = (event) => {
 		event.preventDefault();
-		// const id = match.params.id;
+
 		axios
 			.put(`${APIurl}/employees/${id}`, person)
 			.then(() => {
-				// history.push(`employees/${id}`);
 				closeModal();
 			})
 			.catch(console.error);
@@ -155,6 +151,7 @@ const EmployeeID = ({ match }) => {
 														onChange={handleChange}
 														name='imagePath'
 														value={person.imagePath}
+														style={{ height: '90px' }}
 													/>
 												</FloatingLabel>
 											</Form.Group>
@@ -175,7 +172,6 @@ const EmployeeID = ({ match }) => {
 					</ModalWrapper>
 				</Background>
 			) : (
-				// ) : null}
 				<div>
 					<BadgeDiv>
 						<BadgeHeader src={header} alt='nypd header' />
@@ -185,7 +181,7 @@ const EmployeeID = ({ match }) => {
 								<BadgeDetails>{person.title}</BadgeDetails>
 								<BadgeDetails>{person.location}</BadgeDetails>
 							</BadgeDetailsDiv>
-							{/* <img src={person.imagePath} alt='employee avatar' /> */}
+
 							<BadgeAvatar src={person.imagePath} alt='employee avatar' />
 						</BadgeMiddleDiv>
 						<BadgeFooter src={barcode} alt='barcode' />
@@ -208,9 +204,6 @@ const EmployeeID = ({ match }) => {
 					<ModalWrapper modal={setDeleteModal}>
 						<ModalContent>
 							<ModalTextDiv>
-								{/* <IconDiv>
-									<Icon padding='32px 0 32px 32px' src={x} alt='warning'></Icon>
-								</IconDiv> */}
 								<p>Are you sure you want to delete this entry?</p>
 							</ModalTextDiv>
 							<ButtonDiv justify='flex-end'>
