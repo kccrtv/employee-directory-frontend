@@ -3,6 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 import styled from 'styled-components';
+import { Button } from 'react-bootstrap';
 // import Card from './Card'
 import Employees from './Employees';
 import Modal from './Modal';
@@ -15,9 +16,18 @@ import {
 	Icon,
 	InputContainer,
 	HeaderSix,
-	Button,
 	ButtonDiv,
+	BadgeDiv,
+	BadgeHeader,
+	BadgeFooter,
+	BadgeAvatar,
+	BadgeMiddleDiv,
+	BadgeDetailsDiv,
+	BadgeName,
+	BadgeDetails,
 } from './GlobalStyles';
+import header from '../assets/Header.svg';
+import barcode from '../assets/Barcode.svg';
 
 const StyledInput = styled.input`
 	display: block;
@@ -146,12 +156,30 @@ const EmployeeID = ({ match }) => {
 			) : (
 				// ) : null}
 				<div>
-					<h1>{person.name}</h1>
-					<p>{person.title}</p>
-					<p>{person.location}</p>
-					<img src={person.imagePath} alt='employee avatar' />
-					<button onClick={openModal}>Edit</button>
-					<button onClick={deleteConfirmation}>Delete</button>
+					<BadgeDiv>
+						<BadgeHeader src={header} alt='nypd header' />
+						<BadgeMiddleDiv>
+							<BadgeDetailsDiv>
+								<BadgeName>{person.name}</BadgeName>
+								<BadgeDetails>{person.title}</BadgeDetails>
+								<BadgeDetails>{person.location}</BadgeDetails>
+							</BadgeDetailsDiv>
+							{/* <img src={person.imagePath} alt='employee avatar' /> */}
+							<BadgeAvatar src={person.imagePath} alt='employee avatar' />
+						</BadgeMiddleDiv>
+						<BadgeFooter src={barcode} alt='barcode' />
+					</BadgeDiv>
+					<ButtonDiv className='d-grid gap-2'>
+						<Button
+							variant='outline-danger'
+							onClick={deleteConfirmation}
+							size='md'>
+							Delete
+						</Button>
+						<Button variant='primary' onClick={openModal} size='md'>
+							Edit
+						</Button>
+					</ButtonDiv>
 				</div>
 			)}
 			{deleteModal ? (

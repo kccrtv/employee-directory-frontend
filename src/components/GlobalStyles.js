@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import rolodex from '../assets/rolodex.svg';
-import desk from '../assets/desk.jpeg';
+// import rolodex from '../assets/rolodex.svg';
+// import desk from '../assets/desk.jpeg';
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -149,32 +149,32 @@ export const ButtonDiv = styled.div`
 	padding: ${(props) => props.padding || '24px'};
 	margin: 0 auto;
 	display: inline-flex;
-
+	max-width: 100%;
 	& a {
 		margin: 0;
 	}
 `;
 
-export const Button = styled.button`
-	width: 128px;
-	height: 48px;
-	font-family: 'Inconsolata', monospace;
-	font-size: ${(props) => props.size || '1rem'};
-	border-radius: 2px;
-	margin: ${(props) => props.margin || '0 16px 16px'};
-	border: 1px solid #111b47;
-	font-decoration: none;
+// export const Button = styled.button`
+// 	width: 128px;
+// 	height: 48px;
+// 	font-family: 'Inconsolata', monospace;
+// 	font-size: ${(props) => props.size || '1rem'};
+// 	border-radius: 2px;
+// 	margin: ${(props) => props.margin || '0 16px 16px'};
+// 	border: 1px solid #111b47;
+// 	font-decoration: none;
 
-	&.primary {
-		background-color: #111b47;
-		color: #fff;
-	}
+// 	&.primary {
+// 		background-color: #111b47;
+// 		color: #fff;
+// 	}
 
-	&.secondary {
-		background-color: #e5e7f0;
-		color: #222f65;
-	}
-`;
+// 	&.secondary {
+// 		background-color: #e5e7f0;
+// 		color: #222f65;
+// 	}
+// `;
 
 export const InputContainer = styled.div`
 	padding: 32px;
@@ -187,4 +187,50 @@ export const InputContainer = styled.div`
 
 export const StyledLink = styled.a`
 	text-decoration: none;
+`;
+
+export const BadgeDiv = styled.div`
+	border: 3px solid #000000;
+	max-width: 752px;
+	margin: 0 auto;
+`;
+
+export const BadgeHeader = styled.img`
+	max-width: 100%;
+`;
+
+export const BadgeFooter = styled.img`
+	max-width: 75%;
+	padding: 10px 0;
+`;
+
+export const BadgeMiddleDiv = styled.figure`
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 40px 40px 0 40px;
+	font-family: 'Oswald', sans-serif;
+`;
+
+export const BadgeDetailsDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	letter-spacing: 0.02rem;
+`;
+
+export const BadgeAvatar = styled.img`
+	border: 3px solid #101237;
+	max-width: 55%;
+`;
+
+export const BadgeName = styled.h1`
+	font-weight: bold;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+`;
+
+export const BadgeDetails = styled.p`
+	font-size: 1rem;
+	margin: 0;
 `;

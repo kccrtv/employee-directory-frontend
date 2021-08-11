@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import {
 	Background,
@@ -7,7 +8,6 @@ import {
 	ModalTextDiv,
 	Icon,
 	HeaderSix,
-	Button,
 	ButtonDiv,
 } from './GlobalStyles';
 
