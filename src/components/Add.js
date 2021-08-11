@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
+import { Form, Col, Button } from 'react-bootstrap';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import APIurl from '../config';
 import axios from 'axios';
-import styled from 'styled-components';
-
-const StyledInput = styled.input`
-	display: block;
-`;
 
 const Add = () => {
 	const initialState = {
@@ -36,7 +32,60 @@ const Add = () => {
 	return (
 		<div>
 			<Form onSubmit={handleSubmit} className='create-form'>
-				<label htmlFor='employee'>Employee Full Name:</label>
+				<Col md>
+					<Form.Group className='mb-3' controlId='employee'>
+						<FloatingLabel controlId='employee' label='Employee Full Name'>
+							<Form.Control
+								as='input'
+								id='employee'
+								onChange={handleChange}
+								name='name'
+								value={person.name}
+							/>
+						</FloatingLabel>
+					</Form.Group>
+				</Col>
+				<Col md>
+					<Form.Group className='mb-3' controlId='title'>
+						<FloatingLabel controlId='title' label='Title'>
+							<Form.Control
+								as='input'
+								id='title'
+								onChange={handleChange}
+								name='title'
+								value={person.title}
+							/>
+						</FloatingLabel>
+					</Form.Group>
+				</Col>
+				<Col md>
+					<Form.Group className='mb-3' controlId='location'>
+						<FloatingLabel controlId='location' label='Location'>
+							<Form.Control
+								as='input'
+								id='location'
+								onChange={handleChange}
+								name='location'
+								value={person.location}
+							/>
+						</FloatingLabel>
+					</Form.Group>
+				</Col>
+				<Col md>
+					<Form.Group className='mb-3' controlId='imagePath'>
+						<FloatingLabel controlId='imagePath' label='Image Path URL'>
+							<Form.Control
+								as='textarea'
+								id='imagePath'
+								onChange={handleChange}
+								name='imagePath'
+								value={person.imagePath}
+							/>
+						</FloatingLabel>
+					</Form.Group>
+				</Col>
+
+				{/* <label htmlFor='employee'>Employee Full Name:</label>
 				<StyledInput
 					type='text'
 					id='employee'
@@ -64,22 +113,13 @@ const Add = () => {
 					name='location'
 					value={person.location}
 					placeholder='Location'
-				/>
+				/> */}
 
-				<label htmlFor='imagePath'>Image Path URLs </label>
-
-				<textarea
-					type='text'
-					id='imagePath'
-					onChange={handleChange}
-					name='imagePath'
-					value={person.imagePath}
-					placeholder='Image Path URL'
-				/>
-
-				<button id='button' type='submit'>
-					Submit
-				</button>
+				<div className='d-grid gap-2'>
+					<Button size='lg' id='button' type='submit' variant='dark'>
+						Submit
+					</Button>
+				</div>
 			</Form>
 		</div>
 	);
