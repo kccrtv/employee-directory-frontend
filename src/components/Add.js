@@ -84,37 +84,6 @@ const Add = () => {
 						</FloatingLabel>
 					</Form.Group>
 				</Col>
-
-				{/* <label htmlFor='employee'>Employee Full Name:</label>
-				<StyledInput
-					type='text'
-					id='employee'
-					onChange={handleChange}
-					name='name'
-					value={person.name}
-					placeholder='Employee Full Name'
-				/>
-
-				<label htmlFor='title'>Title: </label>
-				<StyledInput
-					type='text'
-					id='title'
-					onChange={handleChange}
-					name='title'
-					value={person.title}
-					placeholder='Title'
-				/>
-
-				<label htmlFor='location'>Location: </label>
-				<StyledInput
-					type='text'
-					id='location'
-					onChange={handleChange}
-					name='location'
-					value={person.location}
-					placeholder='Location'
-				/> */}
-
 				<div className='d-grid gap-2'>
 					<Button size='lg' id='button' type='submit' variant='dark'>
 						Submit

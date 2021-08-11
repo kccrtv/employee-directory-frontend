@@ -3,10 +3,9 @@ import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 import APIurl from '../config';
 import styled from 'styled-components';
-import { Button } from 'react-bootstrap';
-// import Card from './Card'
-import Employees from './Employees';
-import Modal from './Modal';
+import { Form, Col, Button } from 'react-bootstrap';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+
 import {
 	Background,
 	ModalWrapper,
@@ -98,57 +97,79 @@ const EmployeeID = ({ match }) => {
 		<div className='employeeID'>
 			{modal ? (
 				<Background>
-					<ModalWrapper
-						showModal={setModal}
-						display='inline-block'
-						width='75vw'
-						height='50vh'>
+					<ModalWrapper showModal={setModal}>
 						<ModalContent>
-							<HeaderSix>Edit this entry</HeaderSix>
 							<ModalBox>
-								<div>
-									<InputContainer width='90%'>
-										<form onSubmit={handleEdit}>
-											<label htmlFor='employee' />
-											<StyledInput
-												type='text'
-												id='employee'
-												onChange={handleChange}
-												name='name'
-												value={person.name}
-											/>
-											<label htmlFor='title' />
-											<StyledInput
-												type='text'
-												id='title'
-												onChange={handleChange}
-												name='title'
-												value={person.title}
-											/>
-											<label htmlFor='location' />
-											<StyledInput
-												type='text'
-												id='location'
-												onChange={handleChange}
-												name='location'
-												value={person.location}
-											/>
-											<label htmlFor='imagePath' />
-											<textarea
-												type='text'
-												id='imagePath'
-												onChange={handleChange}
-												name='imagePath'
-												value={person.imagePath}
-											/>
-											<br />
-											<button id='button' type='submit'>
-												Submit Edits
-											</button>
-										</form>
-										<button onClick={closeModal}>Cancel</button>
-									</InputContainer>
-								</div>
+								<InputContainer>
+									<Form onSubmit={handleEdit}>
+										<p>Edit this entry</p>
+										<Col md>
+											<Form.Group className='mb-3' controlId='employee'>
+												<FloatingLabel
+													controlId='employee'
+													label='Employee Full Name'>
+													<Form.Control
+														as='input'
+														id='employee'
+														onChange={handleChange}
+														name='name'
+														value={person.name}
+													/>
+												</FloatingLabel>
+											</Form.Group>
+										</Col>
+										<Col md>
+											<Form.Group className='mb-3' controlId='title'>
+												<FloatingLabel controlId='title' label='Title'>
+													<Form.Control
+														as='input'
+														id='title'
+														onChange={handleChange}
+														name='title'
+														value={person.title}
+													/>
+												</FloatingLabel>
+											</Form.Group>
+										</Col>
+										<Col md>
+											<Form.Group className='mb-3' controlId='location'>
+												<FloatingLabel controlId='location' label='Location'>
+													<Form.Control
+														as='input'
+														id='location'
+														onChange={handleChange}
+														name='location'
+														value={person.location}
+													/>
+												</FloatingLabel>
+											</Form.Group>
+										</Col>
+										<Col md>
+											<Form.Group className='mb-3' controlId='imagePath'>
+												<FloatingLabel
+													controlId='imagePath'
+													label='Image Path URL'>
+													<Form.Control
+														as='textarea'
+														id='imagePath'
+														onChange={handleChange}
+														name='imagePath'
+														value={person.imagePath}
+													/>
+												</FloatingLabel>
+											</Form.Group>
+										</Col>
+									</Form>
+									<br />
+									<ButtonDiv justify='flex-end'>
+										<Button variant='outline-secondary' onClick={closeModal}>
+											Cancel
+										</Button>
+										<Button id='button' type='submit' variant='dark'>
+											Submit
+										</Button>
+									</ButtonDiv>
+								</InputContainer>
 							</ModalBox>
 						</ModalContent>
 					</ModalWrapper>
@@ -169,14 +190,14 @@ const EmployeeID = ({ match }) => {
 						</BadgeMiddleDiv>
 						<BadgeFooter src={barcode} alt='barcode' />
 					</BadgeDiv>
-					<ButtonDiv className='d-grid gap-2'>
+					<ButtonDiv className='d-grid gap-2' justify='normal'>
 						<Button
 							variant='outline-danger'
 							onClick={deleteConfirmation}
 							size='md'>
 							Delete
 						</Button>
-						<Button variant='primary' onClick={openModal} size='md'>
+						<Button variant='dark' onClick={openModal} size='md'>
 							Edit
 						</Button>
 					</ButtonDiv>
@@ -190,18 +211,16 @@ const EmployeeID = ({ match }) => {
 								{/* <IconDiv>
 									<Icon padding='32px 0 32px 32px' src={x} alt='warning'></Icon>
 								</IconDiv> */}
-								<HeaderSix>
-									Are you sure you want to delete this entry?
-								</HeaderSix>
+								<p>Are you sure you want to delete this entry?</p>
 							</ModalTextDiv>
-							<ButtonDiv>
+							<ButtonDiv justify='flex-end'>
 								<Button
-									className='secondary'
-									onClick={() => setDeleteModal((prev) => !prev)}>
+									variant='outline-secondary'
+									onClick={() => setDeleteModal((prev) => !prev)}
+									size='md'>
 									Cancel
 								</Button>
-								{/* <Button className='primary' type='submit'> */}
-								<Button className='primary-red' onClick={handleDelete}>
+								<Button variant='danger' onClick={handleDelete} size='md'>
 									Delete
 								</Button>
 							</ButtonDiv>
