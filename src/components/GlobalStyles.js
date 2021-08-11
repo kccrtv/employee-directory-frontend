@@ -13,8 +13,8 @@ body {
   font-family: sans-serif;
   margin: 0 auto;
   padding: 25px;
-  max-width: 60vw;
-  background-color: #dfe6e9;
+//   max-width: 60vw;
+//   background-color: #dfe6e9;
   text-align: center;
 }
 
@@ -29,7 +29,7 @@ body {
   border-radius: 25px;
   position: relative;
   padding: 25px 15px;
-  background-color: #fff;
+//   background-color: #fff;
   margin: 50px 0;
   height: 200px;
   box-shadow: 0 7px 19px #ccc;
@@ -50,7 +50,7 @@ body {
 
 .name {
   font-size: 2em;
-  color: #fff;
+//   color: #fff;
   display: flex;
   flex: 1;
   margin: 5% 0 0 15px;

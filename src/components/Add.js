@@ -31,6 +31,7 @@ const Add = () => {
 
 	return (
 		<div>
+			<h1>Add to the Employee Directory</h1>
 			<Form onSubmit={handleSubmit} className='create-form'>
 				<Col md>
 					<Form.Group className='mb-3' controlId='employee'>
